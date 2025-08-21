@@ -3,13 +3,13 @@ import withAnimatedGridBackground from "@/shared/UI/GridPattern/withAnimatedGrid
 
 // Example component that will be wrapped with grid background
 const HeroSection = () => (
-  <section className="py-20 px-6">
+  <section id={"hero"} className="py-32 px-6">
     <div className="max-w-4xl mx-auto text-center">
       <h1 className="text-4xl md:text-6xl font-bold mb-6 bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
         Welcome to My Portfolio
       </h1>
       <p className="text-xl text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-        Experience the beautiful animated grid background and try the theme toggle in the header!
+        Experience the beautiful animated grid background and floating header with theme toggle!
       </p>
       <div className="flex gap-4 justify-center">
         <Button>Get Started</Button>
@@ -51,12 +51,6 @@ export default function Home() {
         id="projects"
         title="Projects"
         content="Here you'll find a showcase of my latest work, featuring modern web technologies, beautiful animations, and thoughtful user experiences. Notice how the header stays fixed at the top with a subtle backdrop blur effect."
-      />
-
-      <ContentSection
-        id="contact"
-        title="Contact"
-        content="Get in touch with me to discuss potential collaborations, projects, or just to say hello! The theme toggle in the header remembers your preference and respects your system theme settings."
       />
 
       {/* Extra content to test scrolling */}
