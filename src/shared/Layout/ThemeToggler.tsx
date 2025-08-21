@@ -11,7 +11,7 @@ const ThemeToggler = () => {
         className={cn(
           "relative inline-flex h-10 w-10 items-center justify-center rounded-lg border border-border",
           "bg-background hover:bg-accent transition-all duration-200",
-          "focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2",
+          "focus:outline-none focus:ring-none",
           "group overflow-hidden"
         )}
         aria-label="Toggle theme"

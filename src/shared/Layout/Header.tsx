@@ -1,29 +1,16 @@
 "use client";
 
+import { CodeXml } from "lucide-react";
 import ThemeToggler from "./ThemeToggler";
 
 const Header = () => {
   return (
-    <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-      <div className="container flex h-16 items-center justify-between px-4">
+    <header className="fixed top-6 left-1/2 z-50 transform -translate-x-1/2 w-[95%] max-w-4xl">
+      <div className="flex items-center justify-between px-10 py-3 bg-background/60 backdrop-blur-sm border border-border rounded-full shadow-lg">
         <div className="flex items-center space-x-2">
-          <div className="text-xl font-bold text-foreground">Yashveer</div>
+          <CodeXml />
+          <div className="text-xl font-bold text-foreground">Yashveer Singh</div>
         </div>
-
-        <nav className="hidden md:flex items-center space-x-6 text-sm font-medium">
-          <a href="#home" className="text-foreground/60 hover:text-foreground transition-colors">
-            Home
-          </a>
-          <a href="#about" className="text-foreground/60 hover:text-foreground transition-colors">
-            About
-          </a>
-          <a href="#projects" className="text-foreground/60 hover:text-foreground transition-colors">
-            Projects
-          </a>
-          <a href="#contact" className="text-foreground/60 hover:text-foreground transition-colors">
-            Contact
-          </a>
-        </nav>
 
         <ThemeToggler />
       </div>
