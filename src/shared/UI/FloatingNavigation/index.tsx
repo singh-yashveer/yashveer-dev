@@ -1,7 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { cn } from "../lib/utils";
+import { cn } from "../../lib/utils";
+import Text from "../Text";
+import { FolderOpen, Home, Mail, User } from "lucide-react";
 
 interface NavigationItem {
   href: string;
@@ -10,11 +12,20 @@ interface NavigationItem {
 }
 
 interface FloatingNavigationProps {
-  items: NavigationItem[];
+  items?: NavigationItem[];
   className?: string;
 }
 
-const FloatingNavigation = ({ items, className }: FloatingNavigationProps) => {
+const ICON_SIZE = 16; // Default icon size
+
+const navigationItems = [
+  { href: "#hero", label: "Home", icon: <Home size={ICON_SIZE} /> },
+  { href: "#about", label: "About", icon: <User size={ICON_SIZE} /> },
+  { href: "#projects", label: "Projects", icon: <FolderOpen size={ICON_SIZE} /> },
+  { href: "#contact", label: "Contact", icon: <Mail size={ICON_SIZE} /> },
+];
+
+const FloatingNavigation = ({ items = navigationItems, className }: FloatingNavigationProps) => {
   const [isVisible, setIsVisible] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
@@ -68,7 +79,7 @@ const FloatingNavigation = ({ items, className }: FloatingNavigationProps) => {
             className="flex items-center gap-2 px-3 py-2 text-sm font-medium text-foreground/70 hover:text-foreground transition-all duration-200 rounded-full hover:bg-accent/50 hover:scale-105"
           >
             {item.icon && <span className="w-4 h-4">{item.icon}</span>}
-            <span className="hidden sm:block">{item.label}</span>
+            <Text className="hidden sm:block">{item.label}</Text>
             {/* Show only icons on mobile */}
             {!item.icon && <span className="sm:hidden">{item.label.charAt(0)}</span>}
           </a>
