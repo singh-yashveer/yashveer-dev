@@ -2,7 +2,7 @@
 
 import { CodeXml } from "lucide-react";
 import ThemeToggler from "./ThemeToggler";
-import Text from "../UI/Text";
+import AnimatedNameReveal from "../UI/AnimatedNameReveal";
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
       <div className="flex items-center justify-between px-10 py-3 bg-background/60 backdrop-blur-sm border border-border rounded-full shadow-lg">
         <div className="flex items-center space-x-2">
           <CodeXml />
-          <Text typography="text-display-sm">Yashveer Singh</Text>
+          <AnimatedNameReveal />
         </div>
 
         <ThemeToggler />

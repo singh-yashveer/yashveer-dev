@@ -9,7 +9,7 @@ const FooterZap = () => {
       <Zap
         size={18}
         className={
-          "transition-all duration-300 ease-in-out cursor-pointer text-zinc-400 hover:scale-125 hover:text-yellow-400 hover:drop-shadow-[0_0_8px_rgba(251,191,36,0.6)] animate-bounce"
+          "transition-all duration-300 ease-in-out cursor-pointer text-zinc-400 hover:scale-125 hover:fill-yellow-400 hover:text-yellow-400 hover:drop-shadow-[0_0_10px_rgba(251,191,36,0.6)] animate-bounce"
         }
       />
     </TooltipWrapper>

@@ -1,5 +1,6 @@
 import { useTheme } from "../hooks/useTheme";
 import { cn } from "../lib/utils";
+import { Sun, Moon } from "lucide-react";
 
 const ThemeToggler = () => {
   const { isDark, toggleTheme, mounted } = useTheme();
@@ -17,37 +18,20 @@ const ThemeToggler = () => {
         aria-label="Toggle theme"
       >
         <div className="relative w-5 h-5">
-          {/* SVG Container with morphing animation */}
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" className="absolute inset-0 text-foreground transition-all duration-500">
-            {/* Sun Icon */}
-            <g
-              className={cn(
-                "transition-all duration-500 transform",
-                !mounted || isDark ? "opacity-0 scale-75 rotate-180" : "opacity-100 scale-100 rotate-0"
-              )}
-            >
-              {/* Sun center */}
-              <circle cx="12" cy="12" r="4" fill="currentColor" className="transition-all duration-500" />
-              {/* Sun rays */}
-              <path
-                d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                className="transition-all duration-500"
-              />
-            </g>
+          <Sun
+            className={cn(
+              "absolute inset-0 w-5 h-5 transition-all duration-500 transform",
+              !mounted || isDark ? "opacity-0 scale-75 rotate-180" : "opacity-100 scale-100 rotate-0",
+              "group-hover:rotate-90 hover:transition-transform hover:duration-300"
+            )}
+          />
 
-            {/* Moon Icon */}
-            <g
-              className={cn(
-                "transition-all duration-500 transform",
-                !mounted || isDark ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 -rotate-180"
-              )}
-            >
-              <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z" fill="currentColor" className="transition-all duration-500" />
-            </g>
-          </svg>
+          <Moon
+            className={cn(
+              "absolute inset-0 w-5 h-5 transition-all duration-500 transform",
+              !mounted || isDark ? "opacity-100 scale-100 rotate-0" : "opacity-0 scale-75 -rotate-180"
+            )}
+          />
         </div>
       </button>
     </div>
